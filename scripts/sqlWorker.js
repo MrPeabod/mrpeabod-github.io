@@ -12,10 +12,10 @@ var isFileChange = false;
 var fieldMapping = {};
 var iterator = 0;
 var currFileName = "";
-const filePath = "/scripts/Chinook_Sqlite.sqlite";
+const fileURL = "https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite";
 
 // Eine Standard Datenbank hochladen, damit keine benötigt wird
-fetch(filePath)
+fetch(fileURL)
   .then(response => response.blob())
   .then(blob => {
     const file = new File([blob], filePath.split('/').pop());
