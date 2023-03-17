@@ -91,10 +91,20 @@ function tableBlockNewValue(event) {
   getAssociatedColumn(block.getChildren(false)[0],block);
 };
 
+// Changes join block, if necessary
+function checkJoinBlock(event) {
+  if (!event) return;
+  if (event.type != "change") return;
+  let block = workspace.getBlockById(event.blockId);
+  if (block.type != "join"||event.newValue==event.oldValue) return;       
+  swapStatement(block)
+}
+
 // Eventhandler
 function onchange(event) {
   connectionChangeColumn(event);
   tableBlockNewValue(event);
+  checkJoinBlock(event);
   show_Code();
 };
 workspace.addChangeListener(onchange);
