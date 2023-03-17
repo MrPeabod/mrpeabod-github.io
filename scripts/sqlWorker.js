@@ -15,7 +15,7 @@ var currFileName = "";
 const fileURL = "https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite";
 
 // Eine Standard Datenbank hochladen, damit keine benötigt wird
-fetch(fileURL)
+fetch(fileURL, { mode: 'cors' })
   .then(response => response.blob())
   .then(blob => {
     const file = new File([blob], filePath.split('/').pop());
