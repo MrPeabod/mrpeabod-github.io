@@ -12,10 +12,10 @@ var isFileChange = false;
 var fieldMapping = {};
 var iterator = 0;
 var currFileName = "";
-const fileURL = "scripts/Chinook_Sqlite.sqlite";
+const filePath = "scripts/Chinook_Sqlite.sqlite";
 
 // Eine Standard Datenbank hochladen, damit keine benötigt wird
-fetch(fileURL, { mode: 'cors' })
+fetch(filePath, { mode: 'cors' })
   .then(response => response.blob())
   .then(blob => {
     const file = new File([blob], filePath.split('/').pop());
