@@ -12,7 +12,7 @@ var isFileChange = false;
 var fieldMapping = {};
 var iterator = 0;
 var currFileName = "";
-const fileURL = "https://github.com/MrPeabod/mrpeabod-github.io/blob/2f8edb5f411ad7815d534cb509c3c7a58589e375/scripts/Chinook_Sqlite.sqlite";
+const fileURL = "scripts/Chinook_Sqlite.sqlite";
 
 // Eine Standard Datenbank hochladen, damit keine benötigt wird
 fetch(fileURL, { mode: 'cors' })
