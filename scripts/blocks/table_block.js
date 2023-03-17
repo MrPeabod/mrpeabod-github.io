@@ -1,7 +1,7 @@
 Blockly.Blocks["table"] = {
   init: function() {
     this.appendValueInput("TABLE")
-        .setCheck("COLUMN")
+        .setCheck(null)
         .appendField(new Blockly.FieldDropdown(getTables()), "TABLE");
     this.setInputsInline(false);
     this.setOutput(true, "TABLE");
