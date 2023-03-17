@@ -152,7 +152,7 @@ function toc(msg) {
 	console.log((msg || "toc") + ": " + dt + "ms");
 }
 
-// Add syntax highlihjting to the textarea
+// Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
 	mode: "text/x-mysql",
 	viewportMargin: Infinity,
