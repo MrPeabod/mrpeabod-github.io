@@ -1,0 +1,52 @@
+/* Algemeines */
+header {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+}
+h1 {
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+  font-size: 140%;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+/* Blockly Bereich */
+#blocklyArea {
+  height: 35%;
+}
+
+/* Codearea */
+.CodeMirror {
+  border: 1px solid #222;
+  height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/* Ausgabe */
+table {
+	width:auto;
+	margin:auto;
+	border:1px solid black;
+ 	border-collapse:collapse;
+ 	margin-bottom:10px;
+}
+th, td {
+	border:1px solid #777;
+}
+.error {
+	color:red;
+	transition:.5s;
+	overflow:hidden;
+	margin: 15px;
+}
