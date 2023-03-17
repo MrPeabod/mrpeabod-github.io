@@ -50,3 +50,25 @@ th, td {
 	overflow:hidden;
 	margin: 15px;
 }
+/* Buttons */
+.button {
+  all: unset;
+}
+#execute {
+  border: 1px solid #535252;
+  padding: 0px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+#savedb {
+  border: 1px solid #535252;
+  padding: 0px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
