@@ -70,6 +70,7 @@ function getAssociatedColumn(block,parent){
 
 // checks if the change event was caused by changes to a columnn block and updates the dropdown options
 function connectionChangeColumn(event) {
+  if (!event) return;
   if (event.type != "move") return;
   let block = workspace.getBlockById(event.blockId);
   if ((block.type != "column")||!((event.oldParentId)||(event.newParentId))) return;
@@ -83,6 +84,7 @@ function connectionChangeColumn(event) {
 // checks if the change event was caused by a change to a table block 
 // then updates the dropdown options of connected column blocks
 function tableBlockNewValue(event) {
+  if (!event) return;
   if (event.type != "change") return;
   let block = workspace.getBlockById(event.blockId);
   if (block.type != "table"||event.newValue==event.oldValue) return;
