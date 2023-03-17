@@ -85,7 +85,7 @@ function updateBlocks() {
 		if (block.type == "table") {
 			block.removeInput("TABLE");
 			block.appendValueInput("TABLE")
-					.setCheck(["column", "alias"])
+					.setCheck(null)
 					.appendField(new Blockly.FieldDropdown(getTables()), "TABLE");
 		}
 		if (block.type == "join") {
