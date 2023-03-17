@@ -12,6 +12,21 @@ var isFileChange = false;
 var fieldMapping = {};
 var iterator = 0;
 var currFileName = "";
+const filePath = "/scripts/Chinook_Sqlite.sqlite";
+
+// Eine Standard Datenbank hochladen, damit keine benötigt wird
+fetch(filePath)
+  .then(response => response.blob())
+  .then(blob => {
+    const file = new File([blob], filePath.split('/').pop());
+		const dT = new DataTransfer();
+    dT.items.add(new File([blob], filePath.split('/').pop()));
+		dbFileElm.files = dT.files;
+		const event = new Event('change');
+		dbFileElm.dispatchEvent(event);
+  })
+  .catch(error => console.error(error));
+
 // Start the worker in which sql.js will run
 var worker = new Worker("scripts/worker.sql-wasm.js");
 worker.onerror = error;
