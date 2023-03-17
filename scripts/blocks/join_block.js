@@ -10,10 +10,6 @@ Blockly.Blocks["join"] = {
         this.setNextStatement(true, null);
         this.setColour("%{BKY_LOOPS_HUE}");
         this.setHelpUrl("https://www.w3schools.com/sql/sql_join.asp");
-        this.setOnChange(function(changeEvent){
-            swapStatement(this)
-            show_Code();
-        });
     }
 };
 
