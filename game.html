@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probier's aus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+  </head>
+  <body> 
+    <header>
+      <h1 style="text-align: center;">S(cratch)QL</h1>
+    </header>
+    <div id="blocklyArea"></div>
+    <div id="blocklyDiv" style="position: absolute"></div>
+    <div>
+      <p style="margin: 0; display: inline;">SQL Code:</p>
+      <button id="execute" class="button">Ausführen</button>
+      <textarea id="commands" style="display: none;">-- Ziehe Blöcke auf deinen Arbeitsplatz oder schreibe selbst Code</textarea>
+    </div>
+    <div style="margin: auto;">
+      <label class="button">Lade eine SQLite Datenbank hoch: <input type="file" id="dbfile"></label>
+      <button id="savedb" class="button">Speichern</button>
+      <div id="error" class="error"></div>
+      <pre id="output">Hier wird das Ergebnis ausgegeben</pre>
+    </div>
+
+    <div>
+      <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+        <category name="Abfragen" colour="290">
+          <block type="select"></block>
+          <block type="from"></block>
+          <block type="where"></block>
+          <block type="groupby"></block>
+          <block type="having"></block>
+          <block type="orderby"></block>
+          <block type="join"></block>
+        </category>
+        <category name="Tabelle & Spalten" colour="250">
+          <block type="table"></block>
+          <block type="column"></block>
+          <block type="as"></block>
+        </category>
+        <category name="Aggregatfunktionen" colour="160">
+          <block type="aggregate_min"></block>
+          <block type="aggregate_avg"></block>
+          <block type="aggregate_max"></block>
+          <block type="aggregate_sum"></block>
+          <block type="aggregate_count"></block>
+        </category>
+        <category name="Operatoren" colour="215">
+          <block type="and"></block>
+          <block type="not"></block>
+          <block type="or"></block>
+          <block type="in"></block>
+          <block type="compare"></block>
+          <block type="math"></block>
+        </category>
+        <category name="Eingabe" colour="50">
+          <block type="bool"></block>
+          <block type="integer"></block>
+          <block type="text"></block>
+        </category>
+      </xml>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+    <script type="text/javascript" src="scripts/sqlWorker.js"></script>
+    <script type="text/javascript" src="scripts/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="scripts/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="scripts/blockly/javascript_compressed.js"></script>
+    <script type="text/javascript" src="scripts/blockly/de.js"></script>
+    <script type="text/javascript">
+      // Abfragen
+      Blockly.Msg.LOOPS_HUE = 290;   
+      // Operatoren
+      Blockly.Msg.LOGIC_HUE = 215;
+      // Aggregatfunktionen
+      Blockly.Msg.MATH_HUE = 160;
+      // Eingabe
+      Blockly.Msg.TEXTS_HUE = 50;
+      // Tabelle & Spalten
+      Blockly.Msg.LISTS_HUE = 250;
+    </script>
+    <script type="text/javascript" src="scripts/blocks/select_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/from_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/table_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/column_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/where_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/groupby_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/having_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/orderby_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/aggregates_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/boolean_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/integer_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/text_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/in_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/and_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/as_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/compare_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/join_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/math_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/not_block.js"></script>
+    <script type="text/javascript" src="scripts/blocks/or_block.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </body>
+</html>
