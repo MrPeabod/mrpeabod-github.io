@@ -33,7 +33,7 @@ function swapStatement(block) {
 };
 
 Blockly.JavaScript["join"] = function(block) {
-    var joinType = (block.getFieldValue("joinType")||(block.getFieldValue("joinType")!="")) ? ` ${block.getFieldValue("joinType")} ` : " ";
+    var joinType = (block.getFieldValue("joinType")||(block.getFieldValue("joinType")!="")) ? `${block.getFieldValue("joinType")} ` : "";
     var tableSelection = (block.getFieldValue("tableSelection")) ? ` ${block.getFieldValue("tableSelection")}` : "";
     var joinOn = (block.getFieldValue("joinOn")) ? ` ${block.getFieldValue("joinOn")}` : "";
     var onSelection = (Blockly.JavaScript.statementToCode(block, "STATEMENT") != "") ? ` ${Blockly.JavaScript.statementToCode(block, "STATEMENT")}` : ` ${Blockly.JavaScript.statementToCode(block, "noSTATEMENT")}`;
