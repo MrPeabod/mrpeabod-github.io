@@ -96,7 +96,7 @@ function checkJoinBlock(event) {
   if (!event) return;
   if (event.type != "change") return;
   let block = workspace.getBlockById(event.blockId);
-  if (block.type != "join"||event.newValue==event.oldValue) return;       
+  if (block.type != "join"||event.newValue==event.oldValue||((event.newValue!="ON")&&(event.oldValue!="ON"))) return;       
   swapStatement(block)
 }
 
